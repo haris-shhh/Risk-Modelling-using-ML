@@ -1,35 +1,32 @@
 
 # Scorecard Analysis
 
-This project involves the analysis and evaluation of several scorecards using the Kolmogorov-Smirnov (KS) statistic to determine their effectiveness in distinguishing between classes. The scorecards are assessed to understand their discrimination ability, which is critical for applications such as credit scoring and risk assessment.
+This project involves analysing and evaluating multiple variables using the Kolmogorov-Smirnov (KS) statistic to determine their effectiveness in distinguishing between classes for risk prediction. The scorecards are assessed to understand their discrimination ability.
 
-## Project Structure
+## Contents
 
 - **scorecard_analysis.ipynb**: Jupyter Notebook containing the analysis of the scorecards.
-- **data/**: Directory containing the datasets used for the scorecard evaluation.
-- **scripts/**: Directory containing scripts used for data processing and analysis.
+- **dataset.xlsx/**: Datasets used for the scorecard evaluation.
 
-## Requirements
-
-- Python 3.7+
-- Jupyter Notebook
-- Required Python packages:
-  - pandas
-  - numpy
-  - matplotlib
-  - scikit-learn
-
-Install the required packages using pip:
-
-```sh
-pip install pandas numpy matplotlib scikit-learn
-```
+## Libraries required
+- pandas
+- numpy
+- matplotlib
+- scikit-learn
 
 ## Analysis Overview
 
-The primary analysis involves calculating the KS statistic for each scorecard to evaluate its performance. The KS statistic measures the maximum distance between the cumulative distributions of the scores of the positive and negative classes.
+The primary analysis involves calculating the ANOVA scores for each feature to understand it's significance in predictions.![image](https://github.com/user-attachments/assets/1f3f9202-d693-4c49-ac62-942b25200d67)
 
-### KS Statistics and Interpretation
+The variables are then chosen based on the highest ANOVA scores and the criteria that each scorecard should have 2 continuous variables and 2 categorical variables. Then each scorecard should classify the customers' risk with linear and logistic regression models. KS statistic for each scorecard  is used to evaluate its performance. The KS statistic measures the maximum distance between the cumulative distributions of the scores of the positive and negative classes.
+
+## Linear Regression ROC plots for both scorecards
+![image](https://github.com/user-attachments/assets/d3181398-34d5-4035-a9a3-733a298d2556)
+
+## Logistic Regression ROC plots for both scorecards
+![image](https://github.com/user-attachments/assets/e02df729-70b0-4b55-94f4-11f291687f57)
+
+### Statistics Results and Interpretation
 
 1. **Scorecard 1: KS = 0.2080**
    - **Interpretation**: A KS statistic of 20.80% indicates good discrimination ability. This value suggests that the model can effectively differentiate between the classes, identifying potential defaults with reasonable accuracy. A value above 20% is typically considered good in many financial applications.
